@@ -16,8 +16,8 @@ import { describe, it, expect } from 'vitest';
 import threadDetailReducer, {
   optimisticVoteDetail,
   optimisticVoteComment,
+  fetchThreadDetail, createComment,
 } from '../store/threadDetailSlice';
-import { fetchThreadDetail, createComment } from '../store/threadDetailSlice';
 
 const mockComment = {
   id: 'comment-1',
@@ -77,7 +77,10 @@ describe('threadDetailSlice reducer', () => {
   });
 
   it('optimisticVoteComment upvote: harus menambahkan userId ke upVotesBy komentar', () => {
-    const prevState = { ...initialState, thread: { ...mockThread, comments: [{ ...mockComment }] } };
+    const prevState = {
+      ...initialState,
+      thread: { ...mockThread, comments: [{ ...mockComment }] },
+    };
     const state = threadDetailReducer(
       prevState,
       optimisticVoteComment({ commentId: 'comment-1', voteType: 'up', userId: 'user-1' }),
@@ -119,7 +122,9 @@ describe('threadDetailSlice reducer', () => {
   });
 
   it('createComment.fulfilled: harus menambahkan komentar baru ke thread.comments', () => {
-    const newComment = { id: 'comment-2', content: 'New', upVotesBy: [], downVotesBy: [] };
+    const newComment = {
+      id: 'comment-2', content: 'New', upVotesBy: [], downVotesBy: [],
+    };
     const prevState = { ...initialState, thread: { ...mockThread, comments: [mockComment] } };
     const state = threadDetailReducer(
       prevState,

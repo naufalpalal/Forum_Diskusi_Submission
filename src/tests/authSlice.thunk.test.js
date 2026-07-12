@@ -22,7 +22,9 @@ vi.mock('../utils/api');
 
 const buildStore = () => configureStore({ reducer: { auth: authReducer } });
 
-const mockUser = { id: 'user-1', name: 'Alice', email: 'alice@test.com', avatar: '' };
+const mockUser = {
+  id: 'user-1', name: 'Alice', email: 'alice@test.com', avatar: '',
+};
 
 beforeEach(() => {
   vi.clearAllMocks();
