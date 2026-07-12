@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 💬 Forum Diskusi
 
 Aplikasi forum diskusi berbasis web yang dibangun menggunakan **React** dan **Redux Toolkit**, memanfaatkan [Dicoding Forum API](https://forum-api.dicoding.dev/v1).
@@ -215,3 +216,6 @@ Ketika pengguna menekan tombol vote, state Redux diperbarui *sebelum* respons AP
 Aplikasi ini menggunakan **Dicoding Forum API**:
 - Base URL: `https://forum-api.dicoding.dev/v1`
 - Dokumentasi: [https://forum-api.dicoding.dev/](https://forum-api.dicoding.dev/)
+=======
+# Forum_Diskusi_Submission
+>>>>>>> 1f3898f2ff8456c33eed0a3528b83facb1609e54
