@@ -30,10 +30,10 @@ test.describe('Alur Login', () => {
   });
 
   test('login berhasil harus mengarahkan ke halaman utama dan tampilkan Logout', async ({ page }) => {
-    await page.fill('#login-email', process.env.TEST_EMAIL || 'dicoding@dicoding.com');
-    await page.fill('#login-password', process.env.TEST_PASSWORD || 'dicodingindonesia');
+    await page.fill('#login-email', process.env.TEST_EMAIL || 'Naufalpalal@gmail.com');
+    await page.fill('#login-password', process.env.TEST_PASSWORD || '123456789');
     await page.click('button[type="submit"]');
-    await expect(page).toHaveURL('/', { timeout: 15000 });
+    await page.waitForURL('/', { timeout: 15000 });
     await expect(page.locator('button', { hasText: 'Logout' })).toBeVisible();
   });
 });
