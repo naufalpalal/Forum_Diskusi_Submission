@@ -37,7 +37,7 @@ const mockThread = {
 describe('threadsSlice reducer', () => {
   it('setCategoryFilter: harus mengubah categoryFilter sesuai payload', () => {
     const state = threadsReducer(initialState, setCategoryFilter('react'));
-    expect(state.categoryFilter).toBe('SALAH');
+    expect(state.categoryFilter).toBe('react');
   });
 
   it('setCategoryFilter: harus mereset categoryFilter ke string kosong', () => {
