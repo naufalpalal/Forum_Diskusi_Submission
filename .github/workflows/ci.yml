@@ -33,3 +33,6 @@ jobs:
 
       - name: E2E Tests
         run: npm run e2e
+        env:
+          TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
